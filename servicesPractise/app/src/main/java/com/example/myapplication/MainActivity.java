@@ -18,8 +18,10 @@ public class MainActivity extends AppCompatActivity {
     BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Toast.makeText(MainActivity.this,intent.getStringExtra("data"),Toast.LENGTH_SHORT).show();
-        }
+             Toast.makeText(MainActivity.this,
+                    "My Result Data You passed in :"+intent.getStringExtra("data")+
+                    " with timestamp: "+ Calendar.getInstance().getTimeInMillis(),Toast.LENGTH_SHORT).show();
+             }
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
